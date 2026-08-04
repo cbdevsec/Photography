@@ -454,20 +454,11 @@
 </footer>
 
 <script>
-  const photos = [
-    {seed:"portrait-a", cat:"portrait", cap:"still, mid-laugh", exif:"DIGITAL · ƒ/1.8 · GRAIN ADDED"},
-    {seed:"street-a", cat:"street", cap:"rain on Rue Didouche", exif:"DIGITAL · ƒ/5.6 · MONO PRESET"},
-    {seed:"modern-a", cat:"modern", cap:"edited at 2am", exif:"PHONE · ƒ/1.6 · RAW"},
-    {seed:"portrait-b", cat:"portrait", cap:"window light, no flash", exif:"DIGITAL · ƒ/2 · WARM PRESET"},
-    {seed:"street-b", cat:"street", cap:"market, before opening", exif:"DIGITAL · ƒ/8 · FADED PRESET"},
-    {seed:"modern-b", cat:"modern", cap:"edited on the train", exif:"DIGITAL · ƒ/2.2"},
-    {seed:"portrait-c", cat:"portrait", cap:"her grandmother's kitchen", exif:"DIGITAL · ƒ/2.8 · GRAIN ADDED"},
-    {seed:"street-c", cat:"street", cap:"last tram, 11:58pm", exif:"DIGITAL · ƒ/4 · NIGHT MODE"},
-    {seed:"modern-c", cat:"modern", cap:"shot for a client, same day", exif:"DIGITAL · ƒ/4"},
-    {seed:"portrait-d", cat:"portrait", cap:"unposed, mostly", exif:"DIGITAL · ƒ/2.5 · SOFT GRAIN"},
-    {seed:"street-d", cat:"street", cap:"waiting for the light", exif:"DIGITAL · ƒ/9"},
-    {seed:"modern-d", cat:"modern", cap:"straight off the sensor", exif:"DIGITAL · ƒ/1.8"}
-  ];
+const photos = [
+  {src:"photos/20241230_121707.jpg", cat:"street", cap:"fountain in Algiers", exif:"DIGITAL · ƒ/1.8 ·   NO GRAIN ADDED"},
+  {src:"photos/20241230_124520.jpg", cat:"historical", cap:"La Casbah D'Alger", exif:"DIGITAL · ƒ/5.6 · MONO PRESET"},
+  {src:"photos/20251014_071326.jpg", cat:"Street", cap:"La Baie D'Alger", exif:"PHONE · ƒ/1.6 · RAW"},
+];
 
   const gallery = document.getElementById('gallery');
   photos.forEach(p=>{
@@ -477,7 +468,7 @@
     el.dataset.mode = p.cat === 'modern' ? 'modern' : 'film';
     el.innerHTML = `
       <div class="pin">✦</div>
-      <div class="photo"><img src="https://picsum.photos/seed/${p.seed}/500/520" alt="${p.cap}" loading="lazy"></div>
+      <div class="photo"><img src="${p.src}" alt="${p.cap}" loading="lazy"></div>
       <div class="caption">
         <div class="txt">${p.cap}</div>
         <div class="exif">${p.exif}</div>
