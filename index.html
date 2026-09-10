@@ -473,7 +473,7 @@ const photos = [
     const el = document.createElement('div');
     el.className = 'polaroid';
     el.dataset.cat = p.cat;
-    el.dataset.mode = p.cat === 'modern' ? 'modern' : 'film';
+    
     el.innerHTML = `
       <div class="pin">✦</div>
       <div class="photo"><img src="${p.src}" alt="${p.cap}" loading="lazy"></div>
