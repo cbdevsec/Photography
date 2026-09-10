@@ -245,7 +245,6 @@
     background:var(--polaroid);
     padding:14px 14px 0 14px;
     box-shadow: 0 14px 30px -12px rgba(26,24,21,0.32), 0 1px 0 rgba(255,255,255,0.6) inset;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
     cursor:pointer;
     position:relative;
   }
@@ -473,7 +472,7 @@ const photos = [
     const el = document.createElement('div');
     el.className = 'polaroid';
     el.dataset.cat = p.cat;
-    
+    el.dataset.mode = p.cat === 'modern' ? 'modern' : 'film';
     el.innerHTML = `
       <div class="pin">✦</div>
       <div class="photo"><img src="${p.src}" alt="${p.cap}" loading="lazy"></div>
